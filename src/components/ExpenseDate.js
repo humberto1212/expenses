@@ -1,4 +1,5 @@
 import React from 'react'
+import Card from './Card'
 
 function ExpenseDate(props) {
     const month = props.onDate.toLocaleString('ja-JP-u-ca-japanese', {month: 'long'})
@@ -7,11 +8,11 @@ function ExpenseDate(props) {
     const year = props.onDate.getFullYear()
 
     return (
-        <div>
+        <Card>
             <div>{month} - {monthEn}</div>
             <div>{year}</div>
             <div>{day}</div>
-        </div>
+        </Card>
     )
 }
 
