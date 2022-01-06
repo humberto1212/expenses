@@ -1,0 +1,9 @@
+.card-style{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    background-color:rgba(137, 43, 226, 0.324);
+    border-radius: 20%;
+    height: 120px;
+    width: 150px;
+}
