@@ -1,11 +1,13 @@
 import React from 'react'
 //Components imports
 import ExpenseItem from './ExpenseItem'
+import ExpensesFilter from '../expensesFilter/ExpensesFilter'
 
 function ExpensesItemList(props) {
     console.log(props.onExpensesData)
     return (
         <div>
+            <ExpensesFilter />
             <ExpenseItem 
             onDate={props.onExpensesData[0].date} 
             onTitle={props.onExpensesData[0].title}
