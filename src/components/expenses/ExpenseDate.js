@@ -1,5 +1,5 @@
 import React from 'react'
-import Card from './Card'
+import Card from '../UI/Card'
 
 function ExpenseDate(props) {
     const month = props.onDate.toLocaleString('ja-JP-u-ca-japanese', {month: 'long'})

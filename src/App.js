@@ -1,7 +1,14 @@
 import './App.css';
-import ExpensesItemList from './components/ExpensesItemList';
+//Import components
+import ExpensesItemList from './components/expenses/ExpensesItemList';
+import NewExpense from './components/newExpenses/NewExpense';
 
 function App() {
+
+  const addExpense = (expense) => {
+    console.log("add to app.js")
+    console.log(expense)
+  }
 
   const expensesData = [
     {
@@ -26,6 +33,7 @@ function App() {
 
   return (
     <div className="App">
+      <NewExpense onAddExpense={addExpense} />
       <ExpensesItemList onExpensesData={expensesData}/>
     </div>
   );
