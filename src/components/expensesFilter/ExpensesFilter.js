@@ -13,7 +13,10 @@ function ExpensesFilter(props) {
     //Handle event Dates
     const handleChange = (event) => {
       setYear(event.target.value);
+      props.onSelectedDate(event.target.value)
     };
+
+    
 
     return (
         <div className="expenseFilter-flex">
