@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 //Import CSS file
-import './ExpenseItem.css'
+import './expenseItem.css'
 //MUI imports
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';

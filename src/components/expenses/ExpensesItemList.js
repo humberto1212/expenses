@@ -1,11 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 //Components imports
 import ExpenseItem from './ExpenseItem'
+import ExpensesFilter from '../expensesFilter/ExpensesFilter'
 
 function ExpensesItemList(props) {
+    //State
+    const [filterYear, setSFilterYear] = useState('')
     console.log(props.onExpensesData)
+
+    const selectedDate = (selectedYear) => {
+        setSFilterYear(selectedYear)
+    }
+
+    console.log(filterYear)
+
+
     return (
         <div>
+            <ExpensesFilter  onSelectedDate={selectedDate} />
             <ExpenseItem 
             onDate={props.onExpensesData[0].date} 
             onTitle={props.onExpensesData[0].title}
