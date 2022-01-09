@@ -23,7 +23,7 @@ function ExpensesForm(props) {
     }
 
     const amountHandle = (event) => {
-        setNewAmount(event.target.value)
+        setNewAmount(Number(event.target.value))
         // setNewInput( (prevState) => {
         //     return {...prevState, enteredAmount : event.target.value}
         // } )
@@ -62,7 +62,7 @@ function ExpensesForm(props) {
                         />
                     </div>
                     <div className="new-expense__control">
-                        <label>Number</label>
+                        <label>Amount</label>
                         <input 
                         value={newAmount}
                         type="number" 
