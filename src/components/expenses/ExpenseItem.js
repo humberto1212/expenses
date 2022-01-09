@@ -9,11 +9,11 @@ import Typography from '@mui/material/Typography';
 import ExpenseDate from './ExpenseDate';
 
 function ExpenseItem(props) {
-   const [title, setTitle] = useState(props.onTitle)
+   //const [title, setTitle] = useState(props.onTitle)
 
-    const clickHandler = () => {
-       setTitle('updated!!')
-    }
+    // const clickHandler = () => {
+    //    setTitle('updated!!')
+    // }
 
     return (
         <div>
@@ -24,16 +24,13 @@ function ExpenseItem(props) {
                    
                         <ExpenseDate onDate={props.onDate} /> 
                         <Typography variant="h5" component="div">
-                        {title}
+                        {props.onTitle}
                         </Typography>
                         <Typography sx={{ mb: 1.5 }} color="text.secondary">
                         {props.onPrice}
                         </Typography>
-                        <Typography variant="body2">
-                        {props.onDescription}
-                        </Typography>
 
-                        <button onClick={clickHandler} >click</button>
+                        {/* <button onClick={clickHandler} >click</button> */}
              
                 </CardContent>
             </Card>
