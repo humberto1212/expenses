@@ -17,15 +17,24 @@ function ExpensesItemList(props) {
 
         if(filterYear === ''){
             return data
-        }
+        }else if(filterYear !== ''){
 
-        let filteredExpenses = data.filter(expenses => Number(expenses.date.toLocaleString("en-US").slice(5,9)) === filterYear)
+            // console.log("test Data ===>",data.map((el) => {
+            //     return el.date.getFullYear()
+            // })
+            // )
+
+        let filteredExpenses = data.filter(expenses => expenses.date.getFullYear()=== Number(filterYear))
         console.log("FILTERED DATA",filteredExpenses)
 
         return filteredExpenses
+        }
     } 
 
-    console.log(filterYear)
+    const test = props.onExpensesData.map((expenses) => {
+        return  expenses.date.getFullYear().toString()
+    })
+    console.log("This are the expenses year", test)
 
     return (
         <div>

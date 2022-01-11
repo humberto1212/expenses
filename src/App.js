@@ -13,12 +13,12 @@ const dummyData = [
   },
   {
   id: "2",
-  date: new Date(2021, 3, 20),
+  date: new Date(2021, 9, 20),
   title: "mous",
   amount: 5,
   },
   {
-  id: "", 
+  id: "3", 
   date: new Date(2021, 4, 26),
   title: "keyboard",
   amount: 6,

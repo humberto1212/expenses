@@ -12,6 +12,7 @@ function ExpensesFilter(props) {
     const [year, setYear] = React.useState('');
     //Handle event Dates
     const handleChange = (event) => {
+        //console.log("value",event.target.value)
       setYear(event.target.value);
       props.onSelectedDate(event.target.value)
     };
@@ -33,9 +34,9 @@ function ExpensesFilter(props) {
                     <MenuItem value="">
                         <em>None</em>
                     </MenuItem>
-                    <MenuItem value={2020}>2020</MenuItem>
-                    <MenuItem value={2021}>2021</MenuItem>
-                    <MenuItem value={2022}>2022</MenuItem>
+                    <MenuItem value={"2020"}>2020</MenuItem>
+                    <MenuItem value={"2021"}>2021</MenuItem>
+                    <MenuItem value={"2022"}>2022</MenuItem>
                 </Select>
             </FormControl>
         </div>
