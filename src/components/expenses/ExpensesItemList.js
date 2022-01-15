@@ -13,21 +13,13 @@ function ExpensesItemList(props) {
     }
 
     const fileredData = (data) => {
-        //console.log('this is the data inside the func', data[0].date.toLocaleString("en-US").slice(5,9))
-
         if(filterYear === ''){
             return data
         }else if(filterYear !== ''){
+            let filteredExpenses = data.filter(expenses => expenses.date.getFullYear().toString() === filterYear)
+            console.log("FILTERED DATA",filteredExpenses)
 
-            // console.log("test Data ===>",data.map((el) => {
-            //     return el.date.getFullYear()
-            // })
-            // )
-
-        let filteredExpenses = data.filter(expenses => expenses.date.getFullYear()=== Number(filterYear))
-        console.log("FILTERED DATA",filteredExpenses)
-
-        return filteredExpenses
+            return filteredExpenses
         }
     } 
 
