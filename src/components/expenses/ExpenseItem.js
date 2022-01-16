@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 //Import CSS file
 import './expenseItem.css'
 //MUI imports
@@ -9,12 +9,10 @@ import Typography from '@mui/material/Typography';
 import ExpenseDate from './ExpenseDate';
 
 function ExpenseItem(props) {
-   //const [title, setTitle] = useState(props.onTitle)
 
-    // const clickHandler = () => {
-    //    setTitle('updated!!')
-    // }
-
+    //console.log("this is my list of expnses $$$",props)
+   
+ 
     return (
         <div>
   
@@ -29,8 +27,6 @@ function ExpenseItem(props) {
                         <Typography sx={{ mb: 1.5 }} color="text.secondary">
                         {props.onPrice}
                         </Typography>
-
-                        {/* <button onClick={clickHandler} >click</button> */}
              
                 </CardContent>
             </Card>
