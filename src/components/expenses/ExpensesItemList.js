@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 //Components imports
 import ExpenseItem from './ExpenseItem'
 import ExpensesFilter from '../expensesFilter/ExpensesFilter'
+import ExpensesListCondition from '../expenses/ExpensesListCondition'
 
 function ExpensesItemList(props) {
     console.log(props.onExpensesData)
@@ -44,9 +45,15 @@ function ExpensesItemList(props) {
         <div>
             <ExpensesFilter  onSelectedDate={selectedDate} />
 
-            {
+            <ExpensesListCondition 
+            
+            onFilteredDataPerYear={filteredDataPerYear} 
+            onExpensesData={props.onExpensesData}
+            />
+
+            {/* {
                 filteredData
-            }
+            } */}
         
         </div>
     )
