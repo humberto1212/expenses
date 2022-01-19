@@ -22,9 +22,7 @@ function ExpensesListCondition(props) {
 
     return (
         <div>
-
-            {filteredData}
-            
+            {filteredData}      
         </div>
     )
 }
