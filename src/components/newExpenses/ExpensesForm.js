@@ -73,7 +73,7 @@ function ExpensesForm(props) {
                 <ShowForm onSetShowFormBool={setShowFormBool} /> 
                 
                 : 
-                
+
                 <div>
                 <form onSubmit={submitHandle}>
                     <div className="new-expense__controls">
@@ -105,6 +105,9 @@ function ExpensesForm(props) {
                             onChange={dateHandle} />
                         </div>
                         <div className="new-expense__actions">
+                        <div className="new-expense__actions">
+                            <button type="button" onClick={changeCondition}>Cancel</button>
+                        </div>
                             <button  
                             type="submit"
                             >
@@ -113,53 +116,8 @@ function ExpensesForm(props) {
                         </div>
                     </div>
                 </form>
-                        <div className="new-expense__actions">
-                            <button onClick={changeCondition}>Cancel</button>
-                        </div>
                 </div>
-            } 
-
-            {/* <ShowForm onSetShowFormBool={setShowFormBool} />
-            <div>
-                <form onSubmit={submitHandle}>
-                    <div className="new-expense__controls">
-                        <div className="new-expense__control">
-                            <label>Title</label>
-                            <input 
-                            value={newTitle}
-                            type="text" 
-                            onChange={titleHandle} 
-                            />
-                        </div>
-                        <div className="new-expense__control">
-                            <label>Amount</label>
-                            <input 
-                            value={newAmount}
-                            type="number" 
-                            min="0.01" 
-                            step="0.01" 
-                            onChange={amountHandle}
-                            />
-                        </div>
-                        <div className="new-expense__control">
-                            <label>Date</label>
-                            <input 
-                            value={newDate}
-                            type="date" 
-                            min="2021-01-01" 
-                            max="2022-12-31"
-                            onChange={dateHandle} />
-                        </div>
-                        <div className="new-expense__actions">
-                            <button type="submit">Submit Expenses</button>
-                        </div>
-                    </div>
-                </form>
-                        <div className="new-expense__actions">
-                            <button onClick={changeCondition}>Cancel</button>
-                        </div>
-                </div> */}
-                    
+            }   
             </div>
     )
 }
