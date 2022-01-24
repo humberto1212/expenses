@@ -17,7 +17,7 @@ function ChartBars(props) {
             <div className="chart-bar__inner">
                 <div className="chart-bar__fill" style={{ height: barHeigth }} />
             </div>
-            <div className="chart-bar__label">{props.lavel}</div>
+            <div className="chart-bar__label">{props.label}</div>
         </div>
     )
 }

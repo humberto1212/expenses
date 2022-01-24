@@ -20,7 +20,7 @@ function Chart(props) {
                         key={id}
                         value={dataPoint.value}
                         maxValue={totalMaximum}
-                        lavel={dataPoint.lavel}
+                        label={dataPoint.label}
                     />
                 )
                     
