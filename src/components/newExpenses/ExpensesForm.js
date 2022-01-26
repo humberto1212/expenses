@@ -60,20 +60,13 @@ function ExpensesForm(props) {
         return setShowFormBool(false)
     }
 
-    
-    
     return (
         <div>
-
             {
                 showFormBool === false 
-                
-                ? 
-                
-                <ShowForm onSetShowFormBool={setShowFormBool} /> 
-                
-                : 
-
+                ?   
+                <ShowForm onSetShowFormBool={setShowFormBool} />   
+                :
                 <div>
                 <form onSubmit={submitHandle}>
                     <div className="new-expense__controls">
@@ -106,13 +99,13 @@ function ExpensesForm(props) {
                         </div>
                         <div className="new-expense__actions">
                         <div className="new-expense__actions">
-                            <button type="button" onClick={changeCondition}>Cancel</button>
-                        </div>
-                            <button  
-                            type="submit"
-                            >
+                            <button type="button" onClick={changeCondition}>
+                                Cancel
+                            </button>
+                            <button type="submit">
                                 Submit Expenses
                             </button>
+                        </div>
                         </div>
                     </div>
                 </form>
