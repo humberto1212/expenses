@@ -3,8 +3,6 @@ import Chart from '../chart/Chart'
 
 function ExpensesChart(props) {
 
-    console.log(" -EXPENSES CHART- Filter for Chart",props.expenses)
-
     const chartDataPoints = [
         {label: "Jan", value: 0},
         {label: "Feb", value: 0},

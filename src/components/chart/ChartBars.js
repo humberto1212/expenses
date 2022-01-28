@@ -3,14 +3,10 @@ import './chartBar.css'
 
 function ChartBars(props) {
     let barHeigth = "0%"
-
-    
+ 
     if (props.maxValue > 0){
         barHeigth = Math.round((props.value / props.maxValue) * 100)
     }
-    
-    console.log("-CHART BARS-", barHeigth)
-
 
     return (
         <div className="chart-bar">

@@ -10,8 +10,6 @@ function ExpensesForm(props) {
     const [newDate, setNewDate] = useState('')
     const [showFormBool, setShowFormBool] = useState(false)
 
-    console.log(showFormBool)
-
     // const [newInput, setNewInput] = useState({
     //     enteredTitle: '',
     //     enteredAmount: '',

@@ -35,11 +35,17 @@ function App() {
   
   }
 
+  const handleRemove = (id) => {
+    const newList = expensesData.filter((item) => item.id !== id);
+
+    setExpensesData(newList);
+  }
+
 
   return (
     <div className="App">
       <NewExpense onAddExpense={addExpense} />
-      <ExpensesItemList onExpensesData={expensesData}/>
+      <ExpensesItemList onHandleRemove={handleRemove} onExpensesData={expensesData}/>
     </div>
   );
 }

@@ -38,6 +38,7 @@ function ExpensesItemList(props) {
             <ExpensesListCondition 
                 onFilteredDataPerYear={filteredDataPerYear} 
                 onExpensesData={props.onExpensesData}
+                onHandleRemove={props.onHandleRemove}
             />
         
         </div>
