@@ -1,5 +1,6 @@
 import React from 'react'
 import Chart from '../chart/Chart'
+import '../chart/chartBar.css'
 
 function ExpensesChart(props) {
 
@@ -25,7 +26,7 @@ function ExpensesChart(props) {
     console.log("-EXPENSES CHART- In for loop",chartDataPoints)
 
     return (
-        <div>
+        <div className="chart-container">
             <Chart onDataPoints={chartDataPoints} />   
         </div>
     )
