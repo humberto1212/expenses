@@ -1,6 +1,6 @@
 import React from 'react'
 //Import CSS file
-import '../expenses/expenseItem.css'
+import '../expenses/expenseItemStyle.css'
 //MUI imports
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
