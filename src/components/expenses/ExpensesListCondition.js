@@ -5,7 +5,6 @@ function ExpensesListCondition(props) {
 
      //the filtered data is save in this variable
      let filteredData =  props.onFilteredDataPerYear(props.onExpensesData).map((expenses)=> {
-         console.log(expenses.id)
         return(
             <ExpenseItem  
                 onHandleRemove={props.onHandleRemove}
