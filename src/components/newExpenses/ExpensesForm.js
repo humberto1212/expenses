@@ -9,7 +9,12 @@ function ExpensesForm(props) {
     const [newAmount, setNewAmount] = useState('')
     const [newDate, setNewDate] = useState('')
     const [showFormBool, setShowFormBool] = useState(false)
+    const [formValidationTitle, setFormValidationTitle] = useState(true)
+    const [formValidationDate, setFormValidationDate] = useState(true)
+    const [formValidationAmount, setFormValidationAmount] = useState(true)
+   
 
+   
     // const [newInput, setNewInput] = useState({
     //     enteredTitle: '',
     //     enteredAmount: '',
@@ -18,6 +23,14 @@ function ExpensesForm(props) {
 
     //handle functions
     const titleHandle = (event) => {
+       
+        if(event.target.value.trim().length === 0){
+            setFormValidationTitle(true)
+        }
+        if(event.target.value.trim().length > 0){
+            setFormValidationTitle(false) 
+        }
+
         setNewTitle(event.target.value)
         // setNewInput( (prevState) => {
         //     return {...prevState, enteredTitle : event.target.value}
@@ -25,6 +38,13 @@ function ExpensesForm(props) {
     }
 
     const amountHandle = (event) => {
+        if(event.target.value.trim().length === 0){
+            setFormValidationAmount(true)
+        }
+        if(event.target.value.trim().length > 0){
+            setFormValidationAmount(false) 
+        }
+
         setNewAmount(Number(event.target.value))
         // setNewInput( (prevState) => {
         //     return {...prevState, enteredAmount : event.target.value}
@@ -32,6 +52,13 @@ function ExpensesForm(props) {
     }
 
     const dateHandle = (event) => {
+        if(event.target.value.trim().length === 0){
+            setFormValidationDate(true)
+        }
+        if(event.target.value.trim().length > 0){
+            setFormValidationDate(false) 
+        }
+
         setNewDate(event.target.value)
         // setNewInput( (prevState) => {
         //     return {...prevState, enteredTitle : event.target.value}
@@ -45,6 +72,7 @@ function ExpensesForm(props) {
             amount: newAmount,
             date: new Date(newDate),
         }
+        
         props.onSaveExpenseData(expenseData);
         setNewTitle('')
         setNewAmount('')
@@ -100,8 +128,17 @@ function ExpensesForm(props) {
                             <button type="button" onClick={changeCondition}>
                                 Cancel
                             </button>
-                            <button type="submit">
-                                Submit Expenses
+                             <button 
+                                disabled={  formValidationTitle === false &&
+                                            formValidationDate === false &&
+                                            formValidationAmount === false 
+                                            ? 
+                                            false 
+                                            : 
+                                            true
+                                        } 
+                                type="submit">
+                                    Submit Expenses
                             </button>
                         </div>
                         </div>
