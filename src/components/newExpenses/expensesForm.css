@@ -5,14 +5,14 @@
     margin-bottom: 1rem;
     text-align: left;
   }
-  
-  .new-expense__control label {
+    
+  .new-expense__control_title label {
     font-weight: bold;
     margin-bottom: 0.5rem;
     display: block;
   }
   
-  .new-expense__control input {
+  .new-expense__control_title input {
     font: inherit;
     padding: 0.5rem;
     border-radius: 6px;
@@ -20,8 +20,63 @@
     width: 20rem;
     max-width: 100%;
   }
+
+  .new-expense__control_title.invalid label {
+    color: red;
+  }
+  
+  .new-expense__control_title.invalid input {
+    background-color: #ffd7d7;
+  }
+
+    
+  .new-expense__control_amount label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  
+  .new-expense__control_amount input {
+    font: inherit;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 20rem;
+    max-width: 100%;
+  }
+
+  .new-expense__control_amount.invalid label {
+    color: red;
+  }
+  
+  .new-expense__control_amount.invalid input {
+    background-color: #ffd7d7;
+  }
+
+  .new-expense__control_date label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  
+  .new-expense__control_date input {
+    font: inherit;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 20rem;
+    max-width: 100%;
+  }
+
+  .new-expense__control_date.invalid label {
+    color: red;
+  }
+  
+  .new-expense__control_date.invalid input {
+    background-color: #ffd7d7;
+  }
   
   .new-expense__actions {
     text-align: center;
-
   }
+

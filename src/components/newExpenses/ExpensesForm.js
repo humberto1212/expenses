@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 //Import css
 import "./expensesForm.css"
 import ShowForm from '../Form/ShowForm'
@@ -12,6 +12,7 @@ function ExpensesForm(props) {
     const [formValidationTitle, setFormValidationTitle] = useState(true)
     const [formValidationDate, setFormValidationDate] = useState(true)
     const [formValidationAmount, setFormValidationAmount] = useState(true)
+    const [validationStyle, setValidationStyle] = useState(false)
    
 
    
@@ -81,6 +82,28 @@ function ExpensesForm(props) {
         setShowFormBool(false)
     }
 
+    const handleValidationStyle = () => {
+        formValidationTitle === false &&
+        formValidationDate === false &&
+        formValidationAmount === false 
+        ? 
+        setValidationStyle(false)
+        : 
+        setValidationStyle(true)
+
+        setFormValidationAmount(true)
+        setFormValidationTitle(true)
+        setFormValidationDate(true)
+
+
+    }
+
+
+    console.log("This is the validation",validationStyle)
+    console.log("This is the validation",formValidationTitle )
+    console.log("This is the validation",formValidationDate)
+    console.log("This is the validation",formValidationAmount)
+
     //Hide form
     const changeCondition = () => {
         return setShowFormBool(false)
@@ -95,8 +118,14 @@ function ExpensesForm(props) {
                 :
                 <div>
                 <form onSubmit={submitHandle}>
-                    <div className="new-expense__controls">
-                        <div className="new-expense__control">
+                    <div className={`new-expense__controls`}>
+                        <div className={`new-expense__control_title ${
+                        validationStyle === true
+                        ? 
+                        "invalid"
+                        : 
+                        ""
+                        }`}>
                             <label>Title</label>
                             <input 
                             value={newTitle}
@@ -104,7 +133,13 @@ function ExpensesForm(props) {
                             onChange={titleHandle} 
                             />
                         </div>
-                        <div className="new-expense__control">
+                        <div className={`new-expense__control_amount ${
+                        validationStyle === true
+                        ? 
+                        "invalid"
+                        : 
+                        ""
+                        }`}>
                             <label>Amount</label>
                             <input 
                             value={newAmount}
@@ -114,7 +149,13 @@ function ExpensesForm(props) {
                             onChange={amountHandle}
                             />
                         </div>
-                        <div className="new-expense__control">
+                        <div className={`new-expense__control_date ${
+                        validationStyle === true
+                        ? 
+                        "invalid"
+                        : 
+                        ""
+                        }`}>
                             <label>Date</label>
                             <input 
                             value={newDate}
@@ -129,14 +170,15 @@ function ExpensesForm(props) {
                                 Cancel
                             </button>
                              <button 
+                             onClick={() => handleValidationStyle()}
                                 disabled={  formValidationTitle === false &&
-                                            formValidationDate === false &&
-                                            formValidationAmount === false 
-                                            ? 
-                                            false 
-                                            : 
-                                            true
-                                        } 
+                                    formValidationDate === false &&
+                                    formValidationAmount === false 
+                                    ?
+                                    false
+                                    : 
+                                    validationStyle
+                                    } 
                                 type="submit">
                                     Submit Expenses
                             </button>
