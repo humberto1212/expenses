@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 //Import css
 import "./expensesForm.css"
+//Iport components
 import ShowForm from '../Form/ShowForm'
 
 function ExpensesForm(props) {
@@ -13,14 +14,6 @@ function ExpensesForm(props) {
     const [formValidationDate, setFormValidationDate] = useState(true)
     const [formValidationAmount, setFormValidationAmount] = useState(true)
     const [validationStyle, setValidationStyle] = useState(false)
-   
-
-   
-    // const [newInput, setNewInput] = useState({
-    //     enteredTitle: '',
-    //     enteredAmount: '',
-    //     enteredDate: '',
-    // });
 
     //handle functions
     const titleHandle = (event) => {
@@ -82,6 +75,7 @@ function ExpensesForm(props) {
         setShowFormBool(false)
     }
 
+    //On click change style of inputs depending if form is empty or not
     const handleValidationStyle = () => {
         formValidationTitle === false &&
         formValidationDate === false &&
@@ -94,21 +88,16 @@ function ExpensesForm(props) {
         setFormValidationAmount(true)
         setFormValidationTitle(true)
         setFormValidationDate(true)
-
-
     }
-
-
-    console.log("This is the validation",validationStyle)
-    console.log("This is the validation",formValidationTitle )
-    console.log("This is the validation",formValidationDate)
-    console.log("This is the validation",formValidationAmount)
 
     //Hide form
     const changeCondition = () => {
         return setShowFormBool(false)
     }
 
+    //--------------------
+    //  Return jsx
+    //--------------------
     return (
         <div>
             {
