@@ -5,7 +5,9 @@ import "./expensesForm.css"
 import ShowForm from '../Form/ShowForm'
 
 function ExpensesForm(props) {
-    //States
+    //--------------------
+    //      STATES
+    //--------------------
     const [newTitle, setNewTitle] = useState('')
     const [newAmount, setNewAmount] = useState('')
     const [newDate, setNewDate] = useState('')
@@ -15,7 +17,7 @@ function ExpensesForm(props) {
     const [formValidationAmount, setFormValidationAmount] = useState(true)
     const [validationStyle, setValidationStyle] = useState(false)
 
-    //handle functions
+    //Handle condition if empty and save title value
     const titleHandle = (event) => {
        
         if(event.target.value.trim().length === 0){
@@ -26,11 +28,9 @@ function ExpensesForm(props) {
         }
 
         setNewTitle(event.target.value)
-        // setNewInput( (prevState) => {
-        //     return {...prevState, enteredTitle : event.target.value}
-        // } )
     }
 
+    //Handle condition if empty and save amount value
     const amountHandle = (event) => {
         if(event.target.value.trim().length === 0){
             setFormValidationAmount(true)
@@ -38,13 +38,10 @@ function ExpensesForm(props) {
         if(event.target.value.trim().length > 0){
             setFormValidationAmount(false) 
         }
-
         setNewAmount(Number(event.target.value))
-        // setNewInput( (prevState) => {
-        //     return {...prevState, enteredAmount : event.target.value}
-        // } )
     }
 
+    //Handle condition if empty and save date value
     const dateHandle = (event) => {
         if(event.target.value.trim().length === 0){
             setFormValidationDate(true)
@@ -52,13 +49,10 @@ function ExpensesForm(props) {
         if(event.target.value.trim().length > 0){
             setFormValidationDate(false) 
         }
-
         setNewDate(event.target.value)
-        // setNewInput( (prevState) => {
-        //     return {...prevState, enteredTitle : event.target.value}
-        // } )
     }
 
+    //save Object value with new expenses Inf. and clean inputs states
     const submitHandle = (event) => {
         event.preventDefault();
         const expenseData = {
@@ -75,7 +69,7 @@ function ExpensesForm(props) {
         setShowFormBool(false)
     }
 
-    //On click change style of inputs depending if form is empty or not
+    //On click change style of inputs depending if form is empty or not. and reset states to original state
     const handleValidationStyle = () => {
         formValidationTitle === false &&
         formValidationDate === false &&
@@ -96,7 +90,7 @@ function ExpensesForm(props) {
     }
 
     //--------------------
-    //  Return jsx
+    //  RETURN JSX
     //--------------------
     return (
         <div>
@@ -177,7 +171,7 @@ function ExpensesForm(props) {
                 </form>
                 </div>
             }   
-            </div>
+        </div>
     )
 }
 
