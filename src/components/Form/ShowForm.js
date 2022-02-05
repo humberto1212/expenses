@@ -1,5 +1,5 @@
 import React from 'react'
-import "../newExpenses/expensesForm.css"
+import styles from "../newExpenses/expensesForm.module.css"
 
 function ShowForm(props) {
 
@@ -8,7 +8,7 @@ function ShowForm(props) {
     }
 
     return (
-        <div className="new-expense__actions">
+        <div className={styles['new-expense__actions']}>
             <button onClick={changeCondition}>
                 Show Form
             </button>

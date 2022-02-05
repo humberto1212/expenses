@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 //Import css
-import "./expensesForm.css"
+import styles from "./expensesForm.module.css"
 //Iport components
 import ShowForm from '../Form/ShowForm'
 
@@ -101,11 +101,11 @@ function ExpensesForm(props) {
                 :
                 <div>
                 <form onSubmit={submitHandle}>
-                    <div className={`new-expense__controls`}>
-                        <div className={`new-expense__control_title ${
+                    <div className={`${styles['new-expense__controls']}`}>
+                        <div className={`${styles['new-expense__control_title']} ${
                         validationStyle === true
                         ? 
-                        "invalid"
+                        `${styles.invalid}`
                         : 
                         ""
                         }`}>
@@ -116,10 +116,10 @@ function ExpensesForm(props) {
                             onChange={titleHandle} 
                             />
                         </div>
-                        <div className={`new-expense__control_amount ${
+                        <div className={`${styles['new-expense__control_amount']} ${
                         validationStyle === true
                         ? 
-                        "invalid"
+                        `${styles.invalid}`
                         : 
                         ""
                         }`}>
@@ -132,10 +132,10 @@ function ExpensesForm(props) {
                             onChange={amountHandle}
                             />
                         </div>
-                        <div className={`new-expense__control_date ${
+                        <div className={`${styles['new-expense__control_date']} ${
                         validationStyle === true
                         ? 
-                        "invalid"
+                        `${styles.invalid}`
                         : 
                         ""
                         }`}>
@@ -147,8 +147,8 @@ function ExpensesForm(props) {
                             max="2022-12-31"
                             onChange={dateHandle} />
                         </div>
-                        <div className="new-expense__actions">
-                        <div className="new-expense__actions">
+                        <div className={`${styles['new-expense__actions']}`}>
+                        <div className={styles['new-expense__actions']}>
                             <button type="button" onClick={changeCondition}>
                                 Cancel
                             </button>
