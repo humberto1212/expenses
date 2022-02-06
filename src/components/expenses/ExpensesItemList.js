@@ -27,7 +27,7 @@ function ExpensesItemList(props) {
 
     let filteredExoensesChart = filteredDataPerYear(props.onExpensesData)
 
-    console.log("Filter for Chart",filteredExoensesChart)
+    //console.log("Filter for Chart",filteredExoensesChart)
 
     return (
         <div>
@@ -39,6 +39,7 @@ function ExpensesItemList(props) {
                 onFilteredDataPerYear={filteredDataPerYear} 
                 onExpensesData={props.onExpensesData}
                 onHandleRemove={props.onHandleRemove}
+                onSetExpensesData={props.onSetExpensesData}
             />
         
         </div>

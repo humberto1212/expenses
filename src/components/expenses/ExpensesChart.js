@@ -23,7 +23,7 @@ function ExpensesChart(props) {
         const expensesMonth = expense.date.getMonth();
         chartDataPoints[expensesMonth].value += expense.amount;
     }
-    console.log("-EXPENSES CHART- In for loop",chartDataPoints)
+    //console.log("-EXPENSES CHART- In for loop",chartDataPoints)
 
     return (
         <div className="chart-container">
