@@ -3,8 +3,19 @@ import ExpenseItem from './ExpenseItem'
 
 function ExpensesListCondition(props) {
 
+    //console.log('This is my other list',props)
+
+    //const draggingItem = useRef();
+    //console.log("this is my props",props)
+
+    // const handleDragStart = (e, position) => {
+    //     draggingItem.current = position;
+    //     console.log(e.target.innerHTML);
+    //   };
+   
+
      //the filtered data is save in this variable
-     let filteredData =  props.onFilteredDataPerYear(props.onExpensesData).map((expenses)=> {
+     let filteredData =  props.onFilteredDataPerYear(props.onExpensesData).map((expenses, index)=> {
         return(
             <ExpenseItem  
                 onHandleRemove={props.onHandleRemove}
@@ -12,6 +23,9 @@ function ExpensesListCondition(props) {
                 onDate={expenses.date} 
                 onTitle={expenses.title}
                 onPrice={expenses.amount}
+                onExpensesData={props.onExpensesData}
+                onSetExpensesData={props.onSetExpensesData}
+                index={index}
                 id={expenses.id}
             />  
         )

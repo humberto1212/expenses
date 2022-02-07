@@ -45,7 +45,7 @@ function App() {
   return (
     <div className="App">
       <NewExpense onAddExpense={addExpense} />
-      <ExpensesItemList onHandleRemove={handleRemove} onExpensesData={expensesData}/>
+      <ExpensesItemList onHandleRemove={handleRemove} onExpensesData={expensesData} onSetExpensesData={setExpensesData}/>
     </div>
   );
 }
