@@ -16,7 +16,7 @@
     font: inherit;
     padding: 0.5rem;
     border-radius: 6px;
-    border: 1px solid #ccc;
+    border: 1px solid rgba(204, 204, 204, 0.913);
     width: 20rem;
     max-width: 100%;
   }
@@ -26,7 +26,7 @@
   }
   
   .new-expense__control_title.invalid input {
-    background-color: #ffd7d7;
+    background-color: #ffd7d7c2;
   }
 
     
