@@ -16,7 +16,7 @@ function ExpenseItem(props) {
         
         <div>
             <Card sx={{ minWidth: 275 }}>
-                <h2>Expense Item</h2>
+                <h5>Draggable - Expense Item</h5>
                 <CardContent className="card-content-flex"> 
                         <ExpenseDate onDate={props.onDate} /> 
                         <Typography variant="h5" component="div">
