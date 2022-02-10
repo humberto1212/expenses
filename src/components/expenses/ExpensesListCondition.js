@@ -1,22 +1,65 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import ExpenseItem from './ExpenseItem'
 
 function ExpensesListCondition(props) {
 
-    //console.log('This is my other list',props)
+    console.log('This is my other list',props)
 
-    //const draggingItem = useRef();
-    //console.log("this is my props",props)
+    const draggingItem = useRef();
+     const dragOverItem = useRef();
 
-    // const handleDragStart = (e, position) => {
-    //     draggingItem.current = position;
-    //     console.log(e.target.innerHTML);
-    //   };
+    //Start drag action
+    const handleDragStart = (e, position) => {
+        draggingItem.current = position;
+        console.log("dragging start",e.target.innerHTML);
+    };
+    //Place drag action
+    // const handleDragEnter = (e, position) => {
+    //     dragOverItem.current = position;
+    //     console.log("dragging over",e.target.innerHTML);
+    //    };
+    //Ends drag action
+    // const handleDragEnd = (e) => {
+    //     const listCopy = [...props.onExpensesData];
+
+    //     const draggingItemContent = listCopy[draggingItem.current];
+      
+    //     listCopy.splice(draggingItem.current, 1);
+    //     listCopy.splice(dragOverItem.current, 0, draggingItemContent);
+         
+    //      draggingItem.current = null;
+    //      dragOverItem.current = null;
+
+    //      props.onSetExpensesData(listCopy);
+    // };
+
+    const handleDragEnter = (e, position) => {
+        dragOverItem.current = position;
+        console.log(e.target.innerHTML);
+        const listCopy = [...props.onExpensesData];
+        console.log(draggingItem.current, dragOverItem.current);
+        const draggingItemContent = listCopy[draggingItem.current];
+        listCopy.splice(draggingItem.current, 1);
+        listCopy.splice(dragOverItem.current, 0, draggingItemContent);
+    
+        draggingItem.current = dragOverItem.current;
+        dragOverItem.current = null;
+        props.onSetExpensesData(listCopy);
+      };
    
 
      //the filtered data is save in this variable
      let filteredData =  props.onFilteredDataPerYear(props.onExpensesData).map((expenses, index)=> {
         return(
+            <div
+            onDragStart={(e) => handleDragStart(e, index)}
+            onDragEnter={(e) => handleDragEnter(e, index)}
+            //onDragEnd={handleDragEnd}
+            key={index}
+            draggable
+            onDragOver={(e) => e.preventDefault()}
+            >
+
             <ExpenseItem  
                 onHandleRemove={props.onHandleRemove}
                 key={expenses.id} //"it is better to use the id of each of the expenses to avoid bugs"
@@ -28,6 +71,8 @@ function ExpensesListCondition(props) {
                 index={index}
                 id={expenses.id}
             />  
+
+            </div>
         )
     })
 
